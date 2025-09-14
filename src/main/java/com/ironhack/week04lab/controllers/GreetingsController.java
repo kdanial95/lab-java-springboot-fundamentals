@@ -11,7 +11,7 @@ public class GreetingsController {
 
     public GreetingsController() {
         this.greetingsService = new GreetingsService();
-    };
+    }
 
     @GetMapping(value = "/hello")
     public String greetings(@RequestParam(required = false) String greeting) {

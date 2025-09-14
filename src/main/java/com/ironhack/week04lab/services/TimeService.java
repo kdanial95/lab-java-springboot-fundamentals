@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class TimeService {
-    public TimeService() {};
+    public TimeService() {}
 
     public Map<String, String> getCurrentTime() {
         return Map.of("Time: ", java.time.LocalTime.now().toString());

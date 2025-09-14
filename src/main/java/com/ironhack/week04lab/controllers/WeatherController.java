@@ -16,7 +16,7 @@ public class WeatherController {
 
     public WeatherController() {
         this.weatherService = new WeatherService();
-    };
+    }
 
     @GetMapping("temperature")
     public Map<String, String> getCurrentTemperature() {

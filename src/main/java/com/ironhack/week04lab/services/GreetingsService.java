@@ -2,7 +2,7 @@ package com.ironhack.week04lab.services;
 
 public class GreetingsService {
     private final String greeting = "Hello";
-    public GreetingsService() {};
+    public GreetingsService() {}
 
     public String getGreeting(String greeting) {
         return greeting != null ? greeting : this.greeting;

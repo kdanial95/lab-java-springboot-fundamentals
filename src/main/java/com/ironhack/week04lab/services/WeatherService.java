@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Random;
 
 public class WeatherService {
-    public WeatherService() {};
+    public WeatherService() {}
 
     public Map<String, String> getCurrentTemperature() {
         int temperature = new Random().nextInt(-10, 41);

@@ -15,7 +15,7 @@ public class TimeController {
 
     public TimeController() {
         this.timeService = new TimeService();
-    };
+    }
 
     @GetMapping("current")
     public Map<String, String> getCurrentTime() {
