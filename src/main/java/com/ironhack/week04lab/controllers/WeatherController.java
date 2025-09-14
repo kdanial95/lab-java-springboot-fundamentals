@@ -1,6 +1,11 @@
 package com.ironhack.week04lab.controllers;
 
 import com.ironhack.week04lab.services.WeatherService;
+
+import java.util.ArrayList;
+import java.util.Map;
+
+import org.json.JSONObject;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,25 +13,29 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/weather/")
 public class WeatherController {
-    public WeatherController() {};
+    private final WeatherService weatherService;
+
+    public WeatherController() {
+        this.weatherService = new WeatherService();
+    };
 
     @GetMapping("temperature")
-    public String getCurrentTemperature() {
-        return new WeatherService().getCurrentTemperature();
+    public Map<String, String> getCurrentTemperature() {
+        return this.weatherService.getCurrentTemperature();
     }
 
     @GetMapping("condition")
-    public String getWeatherCondition() {
-        return new WeatherService().getWeatherCondition();
+    public Map<String, String> getWeatherCondition() {
+        return this.weatherService.getWeatherCondition();
     }
 
     @GetMapping("wind-speed")
-    public String getWindSpeed() {
-        return new WeatherService().getWindSpeed();
+    public Map<String, String> getWindSpeed() {
+        return this.weatherService.getWindSpeed();
     }
 
     @GetMapping("all")
-    public String getAllWeatherConditions() {
-        return new WeatherService().getCurrentTemperature() + " " + new WeatherService().getWeatherCondition() + " " + new WeatherService().getWindSpeed();
+    public ArrayList<Map<String, String>> getAllWeatherConditions() {
+        return this.weatherService.getAllWeatherConditions();
     }
 }
